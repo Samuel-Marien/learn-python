@@ -8,7 +8,7 @@ def users(request):
     response = requests.get('https://jsonplaceholder.typicode.com/users')
     #convert reponse data into json
     users = response.json()
-    print(users)
+    #print(users)
 
-    return HttpResponse("Users")
+    return render(request, "users.html", {'users': users})
     pass
